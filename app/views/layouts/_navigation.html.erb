@@ -17,6 +17,9 @@
         <li class="nav-item">
           <%= link_to t('navigation.expense'), new_expenditure_path, class: 'nav-link' %>
         </li>
+        <li class="nav-item">
+          <%= link_to t('navigation.sales_history'), sales_path, class: 'nav-link' %>
+        </li>
       <% end %>
 
       <% if %w[админ].include?(current_user.role) %>

@@ -11,7 +11,6 @@ class Pack < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   before_validation :reset_name
   before_save :say_hi, if: :saved_change_to_initial_remaining?
-  before_create :set_buy_price
   after_create :create_an_entry
   before_update :send_notify_on_remaining_change, if: :saved_change_to_initial_remaining?
 
@@ -59,11 +58,6 @@ class Pack < ApplicationRecord
 
   private
 
-  def set_buy_price
-    return unless buy_price.nil?
-
-    self.buy_price = sell_price - (sell_price * 5 / 100)
-  end
 
   def reset_name
     return unless new_record?
