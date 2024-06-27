@@ -1,7 +1,9 @@
 <div class="container my-5">
   <% if @user.врач? || @user.кассир? %>
     <button class="text-center center btn btn-warning" onclick="window.location.reload();">Обновить</button>
-  <% else %>
+  <% end %>
+
+  <% unless @user.врач? %>
     <%= render 'filter_form', q: @q, url: request.path %>
   <% end %>
 
