@@ -239,7 +239,7 @@ uz:
   sale:
     total_price_label: "Jami to'lo'v"
     total_paid_label: "Mijoz to'lagan summa"
-    comment_label: "Shikoyatlar"
+    comment_label: "Izoh"
     finish_sale_button_label: "Sotuvni yakunlash"
     change_currency_button_label: "Valyutani almashtirish"
     payment_type:
