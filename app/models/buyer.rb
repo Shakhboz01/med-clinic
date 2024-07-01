@@ -6,8 +6,7 @@ class Buyer < ApplicationRecord
 
   enum gender: %i[erkak ayol]
   validates_presence_of :name
-  validates_uniqueness_of :phone_number, message: "Mijoz avval ro'yxatdan o'tgan!"
-  validates :phone_number, length: { is: 9 }
+  validate :unique_phone_number
   has_one_attached :image
   has_many :sales
   has_many :treatments
@@ -34,6 +33,14 @@ class Buyer < ApplicationRecord
   end
 
   private
+
+  def unique_phone_number
+    return if phone_number.empty?
+
+    if Buyer.where(phone_number: phone_number).exists?
+      errors.add(:phone_number, "Mijoz avval ro'yxatdan o'tgan!")
+    end
+  end
 
   def send_message
     message =
