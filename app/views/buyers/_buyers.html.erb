@@ -11,6 +11,7 @@
         <th><%= t('buyers.index.comment2') %></th>
       <% end %>
       <th><%= t('buyers.index.comment') %></th>
+      <th>Kelgan sana</th>
     </tr>
   </thead>
   <tbody style='font-size: large' id='buyers-list'>
@@ -39,7 +40,7 @@
         <% end %>
 
         <td><%= buyer.comment %></td>
-
+        <td><%= buyer.created_at.strftime("%Y-%m-%d") %></td>
         <% if @user.регистратор? %>
           <td>
             <%= simple_form_for(buyer) do |f| %>

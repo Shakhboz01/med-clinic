@@ -1,7 +1,10 @@
-<div class="container my-5">
+<div class="my-5 m-1">
   <% if @user.врач? || @user.кассир?  %>
     <button class="text-center center btn btn-warning" onclick="window.location.reload();">Обновить</button>
-  <% else %>
+  <% end %>
+
+  <% if @user.админ? %>
+    <%= link_to 'Экспорт в Excel', buyers_url(q: params.dig(:q)&.permit!, format: :xlsx), class: 'btn btn-success' %>
   <% end %>
 
   <% unless @user.врач? %>

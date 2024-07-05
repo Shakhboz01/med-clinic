@@ -5,7 +5,9 @@ class BuyersController < ApplicationController
   def index
     @user = current_user
     @q = Buyer.ransack(params[:q])
-    @buyers = @q.result.order(updated_at: :desc).page(params[:page]).per(70)
+    @buyers = @q.result.order(updated_at: :desc)
+    @buyers_data = @buyers
+    @buyers = @buyers.page(params[:page]).per(70)
   end
 
   # GET /buyers/1 or /buyers/1.json
