@@ -6,7 +6,9 @@ class SalesController < ApplicationController
   include Pundit::Authorization
   # GET /sales or /sales.json
   def index
-    @q = Sale.includes(:buyer, :user).where.not('total_price = ?', 0).ransack(params[:q])
+    @q = Sale.includes(:buyer, :user)
+             .where.not('total_price = ?', 0)
+             .ransack(params[:q])
     @sales = @q.result.order(created_at: :desc)
     @sales_data = @sales
     @sales = @sales.page(params[:page]).per(70)
