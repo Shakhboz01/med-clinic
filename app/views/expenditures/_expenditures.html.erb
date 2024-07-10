@@ -32,6 +32,9 @@
             <% unless expenditure.sale_ids.nil? %>
               <%= clink_to t('expenditures.view_sales'), expenditure, 'fa-search' %>
             <% end %>
+            <% if policy(Expenditure).manage? %>
+              <%= clink_to 'Редактировать', edit_expenditure_url(expenditure), 'fa-edit' %>
+            <% end %>
           </td>
         </tr>
       <% end %>

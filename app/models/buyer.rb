@@ -6,13 +6,12 @@ class Buyer < ApplicationRecord
 
   enum gender: %i[erkak ayol]
   validates_presence_of :name
-  validate :unique_phone_number
+  validate :unique_phone_number, on: :create
   has_one_attached :image
   has_many :sales
   has_many :treatments
   has_many :sale_from_local_services
   has_many :sale_from_services
-  before_update :send_message
   before_create :send_message
   scope :active, -> { where(:active => true) }
 
