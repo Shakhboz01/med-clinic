@@ -20,13 +20,13 @@
         <% unless defined?(shrink) %>
           <td><%= index +1 %></td>
         <% end %>
-        <td>
+        <td class='d-flex align-items-center'>
           <% if @user.врач? %>
             <%= link_to buyer.name, buyer_path(buyer) %>
           <% else @user.кассир? %>
-            <%= button_to buyer.name, default_create_sales_path(buyer_id: buyer.id), method: :post, style: 'background: none; cursor: pointer' %>
+            <%= button_to buyer.name, default_create_sales_path(buyer_id: buyer.id), method: :post, style: 'cursor: pointer', class: '' %>
           <% end %>
-          <span class="<%= buyer.gender %>"><%= buyer.gender %></span>
+          | <span class="<%= buyer.gender %>"><%= buyer.gender %></span>
         </td>
         <td><%= buyer.phone_number %></td>
         <td><%= buyer.birthday %></td>
