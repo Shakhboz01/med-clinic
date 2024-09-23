@@ -47,9 +47,7 @@
             <% end %>
           </td>
         <% end %>
-        <td>
-          <%= clink_to t('buyers.index.edit'), edit_buyer_path(buyer), 'fa-edit' %>
-        </td>
+        <td><%= clink_to t('buyers.index.edit'), edit_buyer_path(buyer), 'fa-edit' %></td>
         <% if @user.админ? %>
           <td>
             <%= clink_to t('buyers.index.show'), buyer_path(buyer), 'fa-search' %>
