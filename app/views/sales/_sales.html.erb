@@ -22,9 +22,9 @@
         <td><%= sale.id %></td>
         <td>
           <% if sale.closed? %>
-            <%= clink_to t('sales.open'), toggle_status_sale_path(sale), 'fa-lock', :post %>
+            <%= clink_to t('sales.open'), toggle_status_sale_path(sale), 'bi-lock-fill', :post %>
           <% else %>
-            <%= clink_to t('sales.close'), toggle_status_sale_path(sale), 'fa-lock-open', :post %>
+            <%= clink_to t('sales.close'), toggle_status_sale_path(sale), 'bi-unlock-fill', :post %>
           <% end %>
         </td>
         <td><%= sale.buyer.name %></td>
@@ -47,7 +47,7 @@
           <% end %>
         </td>
         <td>
-          <%= clink_to t('sales.view'), sale_path(sale), 'fa-search' %>
+          <%= clink_to t('sales.view'), sale_path(sale), 'bi-search' %>
         </td>
       </tr>
     <% end %>

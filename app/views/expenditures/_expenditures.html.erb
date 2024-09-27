@@ -30,10 +30,10 @@
           <td><%= strf_datetime(expenditure.created_at) %></td>
           <td>
             <% unless expenditure.sale_ids.nil? %>
-              <%= clink_to t('expenditures.view_sales'), expenditure, 'fa-search' %>
+              <%= clink_to t('expenditures.view_sales'), expenditure, 'bi-search' %>
             <% end %>
             <% if policy(Expenditure).manage? %>
-              <%= clink_to 'Редактировать', edit_expenditure_url(expenditure), 'fa-edit' %>
+              <%= clink_to 'Редактировать', edit_expenditure_url(expenditure), 'bi-pencil' %>
             <% end %>
           </td>
         </tr>

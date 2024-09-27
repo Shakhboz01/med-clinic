@@ -26,12 +26,12 @@
               <td><%= currency_convert(pack.price_in_usd, pack.sell_price) %></td>
               <td><%= find_by_price(pack) %></td>
               <td>
-                <%= clink_to t('sklad.view'), pack_path(pack), 'fa-search' %>
-                <%= clink_to t('sklad.edit'), edit_pack_path(pack), 'fa-edit' %>
+                <%= clink_to t('sklad.view'), pack_path(pack), 'bi-search' %>
+                <%= clink_to t('sklad.edit'), edit_pack_path(pack), 'bi-pencil' %>
                 <% if pack.active %>
-                  <%= clink_to t('sklad.deactivate'), toggle_active_pack_path(pack), 'fa-ban', :post %>
+                  <%= clink_to t('sklad.deactivate'), toggle_active_pack_path(pack), 'bi-ban', :post %>
                 <% else %>
-                  <%= clink_to t('sklad.activate'), toggle_active_pack_path(pack), 'fa-chart-line', :post %>
+                  <%= clink_to t('sklad.activate'), toggle_active_pack_path(pack), 'bi-graph-up-arrow', :post %>
                 <% end %>
               </td>
             </tr>

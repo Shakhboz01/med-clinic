@@ -47,14 +47,14 @@
             <% end %>
           </td>
         <% end %>
-        <td><%= clink_to t('buyers.index.edit'), edit_buyer_path(buyer), 'fa-edit' %></td>
+        <td><%= clink_to t('buyers.index.edit'), edit_buyer_path(buyer), 'bi-pencil' %></td>
         <% if @user.админ? %>
           <td>
-            <%= clink_to t('buyers.index.show'), buyer_path(buyer), 'fa-search' %>
+            <%= clink_to t('buyers.index.show'), buyer_path(buyer), 'bi-search' %>
             <% if buyer.active %>
-              <%= clink_to t('buyers.index.deactivate'), toggle_active_buyer_path(buyer), 'fa-ban', :post %>
+              <%= clink_to t('buyers.index.deactivate'), toggle_active_buyer_path(buyer), 'bi-ban', :post %>
             <% else %>
-              <%= clink_to t('buyers.index.activate'), toggle_active_buyer_path(buyer), 'fa-chart-line', :post %>
+              <%= clink_to t('buyers.index.activate'), toggle_active_buyer_path(buyer), 'bi-graph-up-arrow', :post %>
             <% end %>
           </td>
         <% end %>

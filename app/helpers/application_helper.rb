@@ -24,7 +24,7 @@ module ApplicationHelper
     end
   end
 
-  def cdlink_to(title, link, icon = "fa-remove", confirm_text = "вы уверены?")
+  def cdlink_to(title, link, icon = "bi-x-circle", confirm_text = "вы уверены?")
     button_to link, title: title, style: 'color: blue; cursor: pointer; border: none; background: none', method: :delete, data: { confirm: strip_tags(confirm_text) } do
       content_tag(:i, '', class: %i[fa fa-fw].push(icon))
     end
@@ -32,7 +32,7 @@ module ApplicationHelper
 
   def active_check(active)
     style = active ? "green" : "red"
-    status_class = active ? "true fa-check" : "false fa-remove"
+    status_class = active ? "true fa-check" : "false bi-x-circle"
     "<i style=\"color: #{style}\" class=\"fa fa-fw active-check-#{status_class}\"></i>".html_safe
   end
 
