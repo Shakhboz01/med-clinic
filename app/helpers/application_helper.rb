@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def clink_to(title, link, image_name, method = :get)
-    styled_image = raw("<i class=\"fa fa-fw #{image_name}\"></i>")
+    styled_image = raw("<i class=\"bi #{image_name}\"></i>")
     if method == :get
       link_to link, title: title, method: method do
         styled_image
@@ -32,7 +32,7 @@ module ApplicationHelper
 
   def active_check(active)
     style = active ? "green" : "red"
-    status_class = active ? "true fa-check" : "false bi-x-circle"
+    status_class = active ? "true fa-check" : "false bi-x"
     "<i style=\"color: #{style}\" class=\"fa fa-fw active-check-#{status_class}\"></i>".html_safe
   end
 
