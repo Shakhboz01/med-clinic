@@ -10,7 +10,7 @@ module ProductSells
       total_amount = 0
 
       price_data.each do |id, data|
-        next if data["amount"].to_i.zero?
+        next if data['amount'].to_i.zero?
 
         amount = data["amount"].to_i
         sell_price = data["sell_price"].to_f
