@@ -43,3 +43,7 @@ class Api1Controller < ActionController::API
     request.user_agent.downcase.include?('okhttp') ? 'android' : 'apple'
   end
 end
+
+
+
+
